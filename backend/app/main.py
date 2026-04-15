@@ -1,6 +1,4 @@
-# main.py
-# PURPOSE: Entry point — wires all routers together
-# WHY: This is what uvicorn runs
+
 
 from fastapi import FastAPI
 from app.core.config import settings
