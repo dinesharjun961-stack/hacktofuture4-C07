@@ -1,6 +1,4 @@
-# api/events.py
-# PURPOSE: HTTP endpoints for event management
-# WHY: Red agent POSTs results here; Blue agent GETs events to analyze
+
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
