@@ -1,6 +1,4 @@
-# core/database.py
-# PURPOSE: Creates the DB engine and session factory
-# WHY: Every API route that reads/writes data gets a session from here
+
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -9,7 +7,7 @@ from app.core.config import settings
 
 engine = create_engine(
     settings.DATABASE_URL,
-    pool_pre_ping=True    # auto-reconnects if DB drops
+    pool_pre_ping=True    
 )
 
 SessionLocal = sessionmaker(
@@ -20,10 +18,9 @@ SessionLocal = sessionmaker(
 
 Base = declarative_base()
 
-# FastAPI routes call this to get a DB session
 def get_db():
     db = SessionLocal()
     try:
-        yield db        # hands session to the route
+        yield db        
     finally:
-        db.close()      # always closes, even on crash
+        db.close()      
