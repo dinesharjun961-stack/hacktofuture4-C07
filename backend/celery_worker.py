@@ -1,7 +1,4 @@
-# celery_worker.py
-# PURPOSE: Manages async background tasks
-# WHY: Nmap/Metasploit are SLOW — we can't block FastAPI waiting for them
-#      Celery picks up the task in the background and stores the result
+
 
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
